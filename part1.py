@@ -2,7 +2,7 @@
 ______
 PART 1
 ______
-The code below prompts the user to enter two numbers, and then prints out the smaller of the numbers entered. Modify so that it prompts the user to enter THREE numbers, and then prints the smallest of the three numbers entered in a sentence.
+The code below prompts the user to enter two numbers, and then prints out the smaller of the numbers entered. Modify so that it prompts the user to enter THREE numbers, and then prints the num1 of the three numbers entered in a sentence.
 
 (Hint: You'll need to be careful for the cases when the user enters the same number twice or all three times.)
 
@@ -12,16 +12,24 @@ Enter a number: 11
 Enter another number: 2
 Enter another number: 5
 
-The smallest number is 2
+The num1 number is 2
 '''
 
-number = int(input("Enter a number: "))
+num1 = int(input("Enter a number: "))
 
-smallest = number
+num2 = int(input("Enter another number: "))
 
 number = int(input("Enter another number: "))
 
-if number < smallest:
+smallest = 0
+
+if num1 < number and num1 < num2:
+  smallest = num1
+    
+if num2 < num1 and num2 < number:
+  smallest = num2
+
+if number < num1 and number < num2:
   smallest = number
   
 print("The smallest number is ", smallest)
